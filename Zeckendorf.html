@@ -1,0 +1,62 @@
+<html>
+	<head>
+	<title>Zecondorf</title>
+	</head>
+	
+	<body>
+	<div style="width:400px;">
+	Input<input type="text" id="input">
+	<input type="button" id="ok" value="ok" onclick=zec();><br>
+	Result<input type="text" id="result"><br>
+	</div>
+	<script>
+	var arr = new Array();
+	arr[0]=0;
+	arr[1]=1;	
+	function fibo(num)
+		{
+		var a=0;
+		var n=1;
+		var temp;
+		a=+a;
+		n=+n;
+		var i=2;
+		while(n<num)
+			{
+			temp=n;
+			n=n+a;
+			arr[i]=n;
+			a=temp;
+			i=i+1;
+			}
+		}
+	function zec()
+		{
+		var a;
+		a=document.getElementById('input').value;
+		a=+a;
+		fibo(a);
+		var i=arr.length;
+		var zeck;
+		i=i-1;
+		var j=0;
+		while(1)
+		{
+		if(arr[i] <= a)
+		{
+		zeck=arr[i];
+		a=a-arr[i];
+		document.getElementById('result').value+=zeck;
+		if(a==0)
+		break;
+		else
+		i=i-1;
+		document.getElementById('result').value+="+";
+		}
+		else
+		i=i-1;		
+		}
+		}
+	</script>
+	</body>
+</html>
